@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"time"
+	"log"
 )
 
 func main() {
@@ -18,4 +19,7 @@ func main() {
 
 	fmt.Println(curZeroTimeUnix)
 	fmt.Println(ysdZeroTimeUnix)
+
+	log.SetFlags(log.Lshortfile | log.LstdFlags)
+	log.Println(curZeroTimeUnix)
 }
