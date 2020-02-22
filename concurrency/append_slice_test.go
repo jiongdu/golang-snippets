@@ -6,8 +6,10 @@ import (
 )
 
 func TestAppend(t *testing.T) {
-	x := []string{"start"} // no data race
-	// x := make([]string, 0, 6) // data race
+	// no data race, because there is no memory to place, so it makes new memory
+	x := []string{"start"}
+	// data race, two goroutines notice there is memory to place, race happends because both goroutines trying to write the same memory
+	// x := make([]string, 0, 6)
 
 	wg := sync.WaitGroup{}
 	wg.Add(2)

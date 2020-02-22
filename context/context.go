@@ -51,7 +51,3 @@ func watch(ctx context.Context, name string) {
 		}
 	}
 }
-
-func main() {
-	contextMultiRoutine()
-}
