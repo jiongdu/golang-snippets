@@ -2,12 +2,15 @@ package main
 
 import (
 	"fmt"
+	"sync"
 )
 
 // we can use "go run -race data_race.go" to detect data race condition
 // the method to solve data race: WaitGroup, channel, mutex
 func main() {
 	fmt.Println(getNumber())
+
+	var m sync.Map
 }
 
 func getNumber() int {
