@@ -34,6 +34,12 @@ func c() {
 	fmt.Println(x, y, z)
 }
 
+func insert(s *[][]int, p int, v []int) {
+	*s = append(*s, []int{})
+	copy((*s)[p+1:], (*s)[p:])
+	(*s)[p] = v
+}
+
 // slice is reference type
 func main() {
 
